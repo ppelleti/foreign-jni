@@ -7,6 +7,10 @@ while [ $# -gt 0 ] ; do
     if [ "$maybe_gcc" != "$1" ]; then
         GCC=$maybe_gcc
     fi
+    maybe_gcc=${1#CC=}
+    if [ "$maybe_gcc" != "$1" ]; then
+        GCC=$maybe_gcc
+    fi
     shift
 done
 
